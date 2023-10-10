@@ -3,6 +3,7 @@ from sqlite3 import Error
 from sqlite3 import OperationalError
 import os
 
+
 def create_connection(path_to_db_file: str) -> sqlite3.Connection:
     """ create a database connection to the SQLite database
         specified by db_file
@@ -34,7 +35,7 @@ def execute_sql(conn: sqlite3.Connection, sql_file: str) -> None:
             conn.commit()
         except OperationalError as msg:
             print("Command skipped: ", msg)
-    
+
     return None
 
 
